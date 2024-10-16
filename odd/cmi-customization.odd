@@ -119,35 +119,23 @@
                             </alternate>
                         </content>
                         <attList>
-                            <attDef ident="type" mode="change" usage="opt">
-                                <desc versionDate="2015-01-29" xml:lang="en">describes the nature of the action.</desc>
-                                <datatype>
-                                    <dataRef key="teidata.enumerated" />
-                                </datatype>
-                                <valList type="semi">
+                            <attDef ident="type" mode="replace" usage="req">
+                                <valList mode="add" type="closed">
                                     <valItem ident="sent">
-                                        <desc versionDate="2015-02-09" xml:lang="en">information
-                                            concerning the sending or dispatch of a message.</desc>
+                                        <desc>information concerning the sending or dispatch of a message.</desc>
                                     </valItem>
                                     <valItem ident="received">
-                                        <desc versionDate="2015-02-09" xml:lang="en">information
-                                            concerning the receipt of a message.</desc>
+                                        <desc>information concerning the receipt of a message.</desc>
                                     </valItem>
                                     <valItem ident="transmitted">
-                                        <desc versionDate="2015-02-09" xml:lang="en">information
-                                            concerning the transmission of a message, i.e. between
-                                            the dispatch and the next receipt, redirect or
-                                            forwarding.</desc>
+                                        <desc>information concerning the transmission of a message, i.e. between
+                                        the dispatch and the next receipt, redirect or forwarding.</desc>
                                     </valItem>
                                     <valItem ident="redirected">
-                                        <desc versionDate="2015-02-09" xml:lang="en">information
-                                            concerning the
-                                            redirection of an unread message.</desc>
+                                        <desc>information concerning the redirection of an unread message.</desc>
                                     </valItem>
                                     <valItem ident="forwarded">
-                                        <desc versionDate="2015-02-09" xml:lang="en">information
-                                            concerning the
-                                            forwarding of a message.</desc>
+                                        <desc>information concerning the forwarding of a message.</desc>
                                     </valItem>
                                 </valList>
                             </attDef>
@@ -167,7 +155,7 @@
                     </elementSpec>
                     
                     <elementSpec ident="idno" mode="replace" module="header">
-                        <desc xml:lang="en" versionDate="2015-10-16">Provides the URL of the CMI file</desc>
+                        <desc versionDate="2015-10-16">Provides the URL of the CMI file</desc>
                         <content>
                             <!-- <rng:ref name="data.pointer"/> -->
                             <!-- seems rng:ref doesn't work anymore? -->
