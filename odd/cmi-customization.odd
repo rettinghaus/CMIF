@@ -58,7 +58,7 @@
                     <elementSpec ident="titleStmt" mode="change" module="header">
                         <content>
                             <elementRef key="title"/>
-                            <elementRef key="editor" maxOccurs="unbounded"/><!-- oneOrMore -->
+                            <elementRef key="editor" maxOccurs="unbounded"/> <!-- oneOrMore -->
                         </content>
                     </elementSpec>
 
@@ -112,6 +112,26 @@
                         </attList>
                     </elementSpec>
                     
+                    <elementSpec ident="correspAction" mode="change" module="header">
+                        <content>
+                            <alternate>
+                                <classRef key="model.correspActionPart" minOccurs="1" maxOccurs="unbounded" />
+                            </alternate>
+                        </content>
+                        <attList>
+                            <attDef ident="type" mode="replace" usage="req">
+                                <valList mode="add" type="closed">
+                                    <valItem ident="sent">
+                                        <desc>information concerning the sending or dispatch of a message.</desc>
+                                    </valItem>
+                                    <valItem ident="received">
+                                        <desc>information concerning the receipt of a message.</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList> 
+                    </elementSpec>
+
                     <elementSpec ident="date" mode="change" module="core">
                         <classes mode="replace">
                             <memberOf key="att.datable.w3c"/>
@@ -125,10 +145,10 @@
                     </elementSpec>
                     
                     <elementSpec ident="idno" mode="replace" module="header">
-                        <desc xml:lang="en" versionDate="2015-10-16">Provides the URL of the CMI file</desc>
+                        <desc versionDate="2015-10-16">Provides the URL of the CMI file</desc>
                         <content>
-<!--                            <rng:ref name="data.pointer"/>-->
-                            <!-- seems rng:ref doesn't work anymore?  -->
+                            <!-- <rng:ref name="data.pointer"/> -->
+                            <!-- seems rng:ref doesn't work anymore? -->
                             <dataRef key="teidata.pointer"/>
                         </content>
                         <attList>
